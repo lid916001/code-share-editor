@@ -1,0 +1,19 @@
+// This is your Prisma schema file
+// It defines the structure of your database
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Block {
+  id    Int    @id @default(autoincrement())
+  title String
+  code  String
+}
+
